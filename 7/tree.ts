@@ -93,15 +93,15 @@ class DirTreeConsolePrinter implements DirTreePrinter {
         })
     }
 
-    #printDir(dir: DirTree, depth: number = 0) {
+    #printDir(dir: DirTree, depth = 0) {
         this.#logWithDepth(`- ${dir.name} (dir)`, depth)
     }
 
-    #printFile(file: FileTreeNode, depth: number = 0) {
+    #printFile(file: FileTreeNode, depth = 0) {
         this.#logWithDepth(`- ${file.name} (file size=${file.calculateSize()})`, depth)
     }
 
-    #logWithDepth(text: string, depth: number = 0) {
+    #logWithDepth(text: string, depth = 0) {
         const depthString = depth ? ' '.repeat(depth * 2) : ''
         console.log(`${depthString}${text}`)
     }
